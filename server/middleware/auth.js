@@ -4,6 +4,7 @@ import prisma from '../utils/prisma.js';
 export const isAuthenticated = async (req, res, next) => {
     try {
         const accessToken = req.headers['authorization'];
+        console.log('accessToken', accessToken);
 
         if (accessToken && accessToken.startsWith('Bearer ')) {
             const token = accessToken.slice(7, accessToken.length);
@@ -11,7 +12,7 @@ export const isAuthenticated = async (req, res, next) => {
             // verify the token
             const userData = jwt.verify(
                 token,
-                process.env.JWT_ACCESS_TOKEN_SECRET
+                process.env.JWT_ACCESS_TOKEN_SECRET_KEY
             );
 
             // fetching user data

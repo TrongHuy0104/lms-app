@@ -39,6 +39,7 @@
     "expo-system-ui": "~5.0.7",
     "expo-updates": "~0.28.13",
     "expo-web-browser": "~14.1.6",
+    "moti": "^0.30.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
@@ -50,6 +51,7 @@
     "react-native-size-matters": "^0.4.2",
     "react-native-status-bar-height": "^2.6.0",
     "react-native-svg": "^15.12.0",
+    "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5"
   },

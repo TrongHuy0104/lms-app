@@ -8,7 +8,7 @@ import Two from '@/assets/images/onboarding/2.png';
 import Three from '@/assets/images/onboarding/3.png';
 import { IsIPAD } from '@/themes/app.constants';
 
-export const onBoardingSlides: OnboardingSlidesTypes[] = [
+export const onBoardingSlides: onBoardingSlidesTypes[] = [
     {
         color: '#40E0D0',
         title: 'Explore',
