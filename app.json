@@ -7,16 +7,26 @@
     "icon": "./assets/images/icon.png",
     "scheme": "lmsapp",
     "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#080393"
+    },
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.huy01040104.lmsapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.huy01040104.lmsapp"
     },
     "web": {
       "bundler": "metro",
@@ -25,18 +35,27 @@
     },
     "plugins": [
       "expo-router",
+      "expo-secure-store",
       [
-        "expo-splash-screen",
+        "@react-native-google-signin/google-signin",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "iosUrlScheme": "com.googleusercontent.apps.828890497101-me2q5pcda96oce5k2ujifc12l9a6bg2g"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "55ccfbdb-8896-4c3c-a8d1-b06fd67974fc"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/55ccfbdb-8896-4c3c-a8d1-b06fd67974fc"
     }
   }
 }

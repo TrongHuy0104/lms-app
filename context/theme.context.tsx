@@ -19,19 +19,12 @@ const DarkTheme = {
     },
 };
 
-// Define the shape of the context
-interface ThemeContextType {
-    theme: typeof LightTheme | typeof DarkTheme;
-    toggleTheme: () => void;
-}
-
-// Create the context with a default value
-const ThemeContext = createContext<ThemeContextType>({
+const ThemeContext = createContext({
     theme: LightTheme,
     toggleTheme: () => {},
 });
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+export const ThemeProvider = ({ children }: any) => {
     const systemColorScheme = useColorScheme();
     const [theme, setTheme] = useState(
         systemColorScheme === 'dark' ? DarkTheme : LightTheme
@@ -47,7 +40,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             }
         };
         loadTheme();
-    }, [systemColorScheme]);
+    }, []);
 
     const toggleTheme = async () => {
         const newTheme = theme === DarkTheme ? LightTheme : DarkTheme;
@@ -59,7 +52,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     return (
-        <ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
     );
 };
 
